@@ -102,3 +102,8 @@ task :benchmark do
     end
   end
 end
+
+desc "Generate gemspec file"
+task :gemspec do
+  open("#{PKG_NAME}.gemspec", "w"){|file| file.write(spec.to_ruby)}
+end
